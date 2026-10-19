@@ -69,10 +69,11 @@ public sealed class ModernRsaTests(RsaFixture fixture) : IClassFixture<RsaFixtur
     public void OaepRejectsWrongKeyAndDamagedCiphertext()
     {
         string ciphertext = fixture.Key.EncryptUtf8ToBase64("secret");
-        Assert.Throws<CryptographicException>(() => fixture.OtherKey.DecryptUtf8FromBase64(ciphertext));
+        // Platform RSA providers may throw a derived exception (for example RSAOpenSsl).
+        Assert.ThrowsAny<CryptographicException>(() => fixture.OtherKey.DecryptUtf8FromBase64(ciphertext));
         byte[] damaged = Convert.FromBase64String(ciphertext);
         damaged[damaged.Length / 2] ^= 0x80;
-        Assert.Throws<CryptographicException>(() => fixture.Key.DecryptUtf8FromBase64(Convert.ToBase64String(damaged)));
+        Assert.ThrowsAny<CryptographicException>(() => fixture.Key.DecryptUtf8FromBase64(Convert.ToBase64String(damaged)));
         Assert.Throws<CryptographicException>(() => fixture.Key.DecryptUtf8FromBase64("AA=="));
         Assert.Throws<FormatException>(() => fixture.Key.DecryptUtf8FromBase64("malformed!"));
         Assert.Throws<FormatException>(() => fixture.Key.DecryptUtf8FromBase64(new string('A', 10_000)));
@@ -192,7 +193,7 @@ public sealed class ModernRsaTests(RsaFixture fixture) : IClassFixture<RsaFixtur
         Assert.Equal(fixture.Key.ExportPublicPem(), restored.ExportPublicPem());
         string ciphertext = fixture.Key.EncryptUtf8ToBase64("restored key");
         Assert.Equal("restored key", restored.DecryptUtf8FromBase64(ciphertext));
-        Assert.Throws<CryptographicException>(() => ModernRsaService.ImportEncryptedPrivatePem(pem, "wrong password"));
+        Assert.ThrowsAny<CryptographicException>(() => ModernRsaService.ImportEncryptedPrivatePem(pem, "wrong password"));
         string path = Path.GetTempFileName();
         string publicPath = Path.GetTempFileName();
         string documentPath = Path.GetTempFileName();
@@ -249,7 +250,7 @@ public sealed class ModernRsaTests(RsaFixture fixture) : IClassFixture<RsaFixtur
         Assert.Throws<ArgumentException>(() => ModernRsaService.ImportPublicPem(new string('A', ModernRsaService.MaximumPemLength + 1)));
         Assert.Throws<ArgumentException>(() => ModernRsaService.ImportPublicPem(fixture.Key.ExportPublicPem() + "\n" + fixture.OtherKey.ExportPublicPem()));
         Assert.Throws<ArgumentException>(() => ModernRsaService.ImportPrivatePem(fixture.Key.ExportPublicPem()));
-        Assert.Throws<CryptographicException>(() => ModernRsaService.ImportPublicPem("-----BEGIN PUBLIC KEY-----\nAAAA\n-----END PUBLIC KEY-----"));
+        Assert.ThrowsAny<CryptographicException>(() => ModernRsaService.ImportPublicPem("-----BEGIN PUBLIC KEY-----\nAAAA\n-----END PUBLIC KEY-----"));
     }
 
     [Fact]
