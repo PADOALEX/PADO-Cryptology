@@ -1,0 +1,127 @@
+PADO-Cryptology/
+(source tree; excludes build artifacts, caches and Git metadata)
+
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── docs/
+│   ├── algorithms/
+│   │   ├── extended-euclid.md
+│   │   ├── jacobi.md
+│   │   ├── rsa.md
+│   │   ├── shamir.md
+│   │   └── vigenere.md
+│   ├── architecture/
+│   │   └── overview.md
+│   ├── audit/
+│   │   ├── classical-control-vectors.json
+│   │   ├── classical.md
+│   │   ├── generate_classical_vectors.py
+│   │   ├── mathematics.md
+│   │   ├── README.md
+│   │   ├── security-original-vectors.json
+│   │   └── security.md
+│   ├── roadmap.md
+│   ├── security.md
+│   └── structure.txt
+├── legacy/
+│   └── python/
+│       ├── config.py
+│       ├── cryptology.py
+│       ├── tab1.py
+│       ├── tab10.py
+│       ├── tab2.py
+│       ├── tab3.py
+│       ├── tab4.py
+│       ├── tab5.py
+│       ├── tab6.py
+│       ├── tab7.py
+│       ├── tab8.py
+│       ├── tab9.py
+│       └── utils.py
+├── scripts/
+│   ├── cli_smoke.py
+│   └── original_security_vectors.py
+├── src/
+│   ├── Cryptology.Cli/
+│   │   ├── Cryptology.Cli.csproj
+│   │   └── Program.cs
+│   ├── Cryptology.Core/
+│   │   ├── Asymmetric/
+│   │   │   └── EducationalRsa.cs
+│   │   ├── ClassicalCiphers/
+│   │   │   ├── CaesarCipher.cs
+│   │   │   ├── SubstitutionCipher.cs
+│   │   │   ├── SubstitutionKey.cs
+│   │   │   └── VigenereCipher.cs
+│   │   ├── Cryptanalysis/
+│   │   │   ├── CryptanalysisService.cs
+│   │   │   ├── FrequencyAnalyzer.cs
+│   │   │   └── NGramAnalyzer.cs
+│   │   ├── Models/
+│   │   │   └── Alphabet.cs
+│   │   ├── NumberTheory/
+│   │   │   ├── CryptoRandom.cs
+│   │   │   ├── IntegerMath.cs
+│   │   │   ├── PrimalityTest.cs
+│   │   │   └── PrimeGenerator.cs
+│   │   ├── SecretSharing/
+│   │   │   └── ShamirSecretSharing.cs
+│   │   └── Cryptology.Core.csproj
+│   ├── Cryptology.Desktop/
+│   │   ├── Resources/
+│   │   │   └── Strings.cs
+│   │   ├── Services/
+│   │   │   ├── FileService.cs
+│   │   │   └── RsaSession.cs
+│   │   ├── ViewModels/
+│   │   │   ├── ClassicalViewModels.cs
+│   │   │   ├── MathematicsViewModels.cs
+│   │   │   ├── SecurityViewModels.cs
+│   │   │   ├── ShellViewModel.cs
+│   │   │   └── ToolViewModel.cs
+│   │   ├── Views/
+│   │   │   ├── FrequencyChart.cs
+│   │   │   ├── MainWindow.axaml
+│   │   │   ├── MainWindow.axaml.cs
+│   │   │   └── ToolViews.cs
+│   │   ├── App.axaml
+│   │   ├── App.axaml.cs
+│   │   ├── Cryptology.Desktop.csproj
+│   │   └── Program.cs
+│   └── Cryptology.Security/
+│       ├── ByteOneTimePad.cs
+│       ├── Cryptology.Security.csproj
+│       └── ModernRsaService.cs
+├── tests/
+│   ├── Cryptology.Core.Tests/
+│   │   ├── ClassicalCipherTests.cs
+│   │   ├── ClassicalCryptanalysisTests.cs
+│   │   ├── Cryptology.Core.Tests.csproj
+│   │   ├── MathematicsRsaTests.cs
+│   │   ├── MathematicsShamirTests.cs
+│   │   └── MathematicsTests.cs
+│   ├── Cryptology.Security.Tests/
+│   │   ├── ByteOneTimePadTests.cs
+│   │   ├── Cryptology.Security.Tests.csproj
+│   │   └── ModernRsaTests.cs
+│   ├── Cryptology.UiChecks/
+│   │   ├── ClassicalWorkflowTests.cs
+│   │   ├── Cryptology.UiChecks.csproj
+│   │   ├── FileServiceTests.cs
+│   │   ├── HeadlessSetup.cs
+│   │   ├── MathematicsWorkflowTests.cs
+│   │   ├── RsaSessionTests.cs
+│   │   ├── SecurityWorkflowTests.cs
+│   │   ├── UiHarness.cs
+│   │   └── WindowTests.cs
+│   └── vectors/
+│       └── mathematics.json
+├── tools/
+│   └── reference_vectors.py
+├── .editorconfig
+├── .gitignore
+├── Directory.Build.props
+├── global.json
+├── PADO.Cryptology.sln
+└── README.md

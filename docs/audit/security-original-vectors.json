@@ -1,0 +1,104 @@
+{
+  "source": "original unmodified tab5.py/tab8.py/tab9.py methods extracted with ast",
+  "otp": [
+    {
+      "text": "ABC",
+      "key": "XYZ",
+      "ciphertext_code_points": [
+        25,
+        27,
+        25
+      ],
+      "warnings": []
+    },
+    {
+      "text": "ABC",
+      "key": "XYZABC",
+      "ciphertext_code_points": [
+        25,
+        27,
+        25
+      ],
+      "warnings": []
+    },
+    {
+      "text": "\u0407\u0436\u0430\u043a \ud83e\uddea",
+      "key": "\u0410\u0411\u0412\u0413\u0490\u0414",
+      "ciphertext_code_points": [
+        23,
+        39,
+        34,
+        41,
+        1200,
+        130558
+      ],
+      "warnings": []
+    },
+    {
+      "text": "",
+      "key": "",
+      "ciphertext_code_points": [],
+      "warnings": [
+        "no_text"
+      ]
+    },
+    {
+      "text": "ABC",
+      "key": "XY",
+      "ciphertext_code_points": [],
+      "warnings": [
+        "err_otp_len"
+      ]
+    }
+  ],
+  "rsa_key": {
+    "p": 61,
+    "q": 53,
+    "e": 65537,
+    "n": 3233,
+    "d": 2753
+  },
+  "rsa": [
+    {
+      "text": "A",
+      "ciphertext": "2790",
+      "decrypted": "A",
+      "decrypted_code_points": [
+        65
+      ]
+    },
+    {
+      "text": "AA",
+      "ciphertext": "2790 2790",
+      "decrypted": "AA",
+      "decrypted_code_points": [
+        65,
+        65
+      ]
+    },
+    {
+      "text": "\ud83e\uddea",
+      "ciphertext": "1292",
+      "decrypted": "\u00c2",
+      "decrypted_code_points": [
+        194
+      ]
+    }
+  ],
+  "signature": [
+    {
+      "file_hex": "616263",
+      "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+      "signature": 1480,
+      "verification": "msg_valid",
+      "signature_plus_n_verification": "msg_valid"
+    },
+    {
+      "file_hex": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "signature": 2775,
+      "verification": "msg_valid",
+      "signature_plus_n_verification": "msg_valid"
+    }
+  ]
+}

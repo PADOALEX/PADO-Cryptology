@@ -1,0 +1,134 @@
+{
+  "provenance": "Executed original supplied Python methods without modifying algorithms; GUI only replaced by adapters.",
+  "caesar": [
+    {
+      "text": "Abc XyZ! 123 😀",
+      "shift": 3,
+      "alphabet": "en",
+      "expected": "Def AbC! 123 😀"
+    },
+    {
+      "text": "ҐЄІЇ, ґєії! Яя",
+      "shift": 5,
+      "alphabet": "uk",
+      "expected": "ЗЇМН, зїмн! Ґґ"
+    }
+  ],
+  "vigenere": [
+    {
+      "text": "Attack at dawn!",
+      "key": "LEMON",
+      "alphabet": "en",
+      "expected": "Lxfopv ef rnhr!"
+    },
+    {
+      "text": "Привіт, ҐЄІЇ!",
+      "key": "КЛЮЧ",
+      "alphabet": "uk",
+      "expected": "Авжщхґ, ВБХЧ!"
+    }
+  ],
+  "substitution": {
+    "text": "Abc XyZ!",
+    "key": "ZYXWVUTSRQPONMLKJIHGFEDCBA",
+    "expected": "Zyx CbA!"
+  },
+  "frequencies": {
+    "text": "Aaa B!",
+    "alphabet": "en",
+    "rows": [
+      [
+        "'a'",
+        2,
+        "50.0%"
+      ],
+      [
+        "'A'",
+        1,
+        "25.0%"
+      ],
+      [
+        "'B'",
+        1,
+        "25.0%"
+      ]
+    ]
+  },
+  "ngrams": {
+    "text": "ABABA AB",
+    "result": "Bigrams:  AB(3)BA(2)\nTrigrams: ABA(2)BAB(1)"
+  },
+  "defects_not_csharp_expectations": [
+    {
+      "description": "UA regex accepts Russian-only characters",
+      "text": "ҐґЄєІіЇї ЫЭЪ",
+      "legacy_rows": [
+        [
+          "'Є'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'І'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'Ї'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'Ъ'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'Ы'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'Э'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'є'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'і'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'ї'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'Ґ'",
+          1,
+          "9.09%"
+        ],
+        [
+          "'ґ'",
+          1,
+          "9.09%"
+        ]
+      ]
+    },
+    {
+      "description": "Vigenere silently removes invalid key characters",
+      "key": "L!EMON",
+      "legacy_output": "Lxfopv ef rnhr!"
+    },
+    {
+      "description": "Foreign unique substitution characters accepted",
+      "key": "BCDEFGHIJKLMNOPQRSTUVWXYZ0",
+      "legacy_output": "Bcd Yz0!"
+    }
+  ]
+}

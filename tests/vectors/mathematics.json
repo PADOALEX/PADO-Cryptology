@@ -1,0 +1,196 @@
+{
+  "seed": 20261019,
+  "source_sha256": {
+    "tab6.py": "bee828a7a1d6cc6da42fc987429a3208ecd9c381195235a4a3f6c562009bfa3e",
+    "tab7.py": "a68b308523dc59778ee350bab1b7826cecb52264de45e9be4ac238dae61dd429",
+    "tab8.py": "2bbfc13c22fad69c9c189b30c707dc2d65570e6a02fd5cc3b803bd54d8f91cf0",
+    "tab9.py": "5a4d1ec8592d4f4816ac0a79247841fcdc864c03af643c13d39b178f3ed67a6a",
+    "tab10.py": "fdcfe783472158095f5711128e42490f53b90155d8b046a040f078bd8ebe3b1e"
+  },
+  "original": {
+    "extended_gcd": [
+      {
+        "a": 240,
+        "b": 46,
+        "result": [
+          2,
+          -9,
+          47
+        ]
+      },
+      {
+        "a": -240,
+        "b": 46,
+        "result": [
+          -2,
+          -9,
+          -47
+        ]
+      },
+      {
+        "a": 240,
+        "b": -46,
+        "result": [
+          2,
+          -9,
+          -47
+        ]
+      },
+      {
+        "a": 0,
+        "b": 0,
+        "result": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "result": [
+          1,
+          1,
+          0
+        ]
+      }
+    ],
+    "jacobi": [
+      {
+        "a": 1001,
+        "n": 9907,
+        "result": -1
+      },
+      {
+        "a": -1,
+        "n": 7,
+        "result": -1
+      },
+      {
+        "a": 5,
+        "n": 21,
+        "result": 1
+      },
+      {
+        "a": 0,
+        "n": 1,
+        "result": 1
+      },
+      {
+        "a": 6,
+        "n": 9,
+        "result": 0
+      }
+    ],
+    "ss_zero_rounds_composite_9": true,
+    "mr_561": {
+      "6": false,
+      "8": false,
+      "9": false,
+      "10": false
+    },
+    "modpow_zero_exponent_mod_one": 1
+  },
+  "migration": {
+    "gcd": [
+      {
+        "a": 240,
+        "b": 46,
+        "gcd": 2
+      },
+      {
+        "a": -240,
+        "b": 46,
+        "gcd": 2
+      },
+      {
+        "a": 240,
+        "b": -46,
+        "gcd": 2
+      },
+      {
+        "a": 0,
+        "b": 0,
+        "gcd": 0
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "gcd": 1
+      }
+    ],
+    "modpow": [
+      {
+        "base": 4,
+        "exponent": 13,
+        "modulus": 497,
+        "result": 445
+      },
+      {
+        "base": -2,
+        "exponent": 5,
+        "modulus": 13,
+        "result": 7
+      },
+      {
+        "base": 7,
+        "exponent": 0,
+        "modulus": 1,
+        "result": 0
+      },
+      {
+        "base": 0,
+        "exponent": 0,
+        "modulus": 7,
+        "result": 1
+      }
+    ],
+    "rsa": {
+      "p": 61,
+      "q": 53,
+      "e": 17,
+      "n": 3233,
+      "phi": 3120,
+      "d": 2753,
+      "message": 65,
+      "cipher": 2790
+    },
+    "educational_signature": {
+      "data_utf8": "abc",
+      "representative": 256,
+      "signature": 1480
+    },
+    "shamir": {
+      "prime": 2089,
+      "threshold": 3,
+      "secret": 1234,
+      "coefficients": [
+        1234,
+        166,
+        94
+      ],
+      "shares": [
+        {
+          "x": 1,
+          "y": 1494
+        },
+        {
+          "x": 2,
+          "y": 1942
+        },
+        {
+          "x": 3,
+          "y": 489
+        },
+        {
+          "x": 4,
+          "y": 1313
+        },
+        {
+          "x": 5,
+          "y": 236
+        }
+      ]
+    }
+  }
+}
